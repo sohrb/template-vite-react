@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import tanstackQuery from "@tanstack/eslint-plugin-query";
 import prettier from "eslint-config-prettier";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -40,6 +41,7 @@ const config = ts.config(
         version: "detect",
       },
     },
+    extends: [...tanstackQuery.configs["flat/recommended"]],
     plugins: {
       react,
       "react-hooks": reactHooks,
