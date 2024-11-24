@@ -1,6 +1,7 @@
 import js from "@eslint/js";
 import tanstackQuery from "@tanstack/eslint-plugin-query";
 import prettier from "eslint-config-prettier";
+import jsxA11y from "eslint-plugin-jsx-a11y";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
@@ -41,7 +42,10 @@ const config = ts.config(
         version: "detect",
       },
     },
-    extends: [...tanstackQuery.configs["flat/recommended"]],
+    extends: [
+      ...tanstackQuery.configs["flat/recommended"],
+      jsxA11y.flatConfigs.recommended,
+    ],
     plugins: {
       react,
       "react-hooks": reactHooks,
