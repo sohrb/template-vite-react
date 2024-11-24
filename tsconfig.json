@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    // Type Checking
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+
+    // Modules
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noUncheckedSideEffectImports": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "resolveJsonModule": true,
+
+    // Emit
+    "noEmit": true,
+
+    // Interop Constraints
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+
+    // Language and Environment
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "moduleDetection": "force",
+    "target": "ES2022",
+
+    // Output Formatting
+    "noErrorTruncation": true,
+
+    // Output Formatting
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
