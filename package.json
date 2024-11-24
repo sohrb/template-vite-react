@@ -1,0 +1,17 @@
+{
+  "name": "template-vite-react",
+  "version": "0.0.0",
+  "private": true,
+  "author": {
+    "name": "Sohrab Chegini",
+    "email": "sohrab.chegini@gmail.com"
+  },
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-packagejson": "^2.5.5"
+  }
+}
