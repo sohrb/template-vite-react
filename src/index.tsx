@@ -6,6 +6,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import { queryClient, router } from "./lib";
+import { ThemeProvider } from "./providers";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
@@ -16,7 +17,9 @@ const root = createRoot(rootElement);
 root.render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </QueryClientProvider>
   </StrictMode>,
 );
