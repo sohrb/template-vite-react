@@ -13,6 +13,20 @@ const config = defineConfig({
       semicolons: true,
     }),
   ],
+  build: {
+    cssMinify: "lightningcss",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom"],
+          "tanstack-vendor": [
+            "@tanstack/react-query",
+            "@tanstack/react-router",
+          ],
+        },
+      },
+    },
+  },
 });
 
 export default config;
