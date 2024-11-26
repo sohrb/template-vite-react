@@ -5,13 +5,11 @@ import { lazy } from "react";
 
 const TanStackRouterDevtools = import.meta.env.PROD
   ? () => null
-  : lazy(() => {
-      return import("@tanstack/router-devtools").then(
-        ({ TanStackRouterDevtools }) => {
-          return { default: TanStackRouterDevtools };
-        },
-      );
-    });
+  : lazy(() =>
+      import("@tanstack/router-devtools").then(
+        ({ TanStackRouterDevtools }) => ({ default: TanStackRouterDevtools }),
+      ),
+    );
 
 const RootRoute = createRootRouteWithContext<{
   queryClient: QueryClient;

@@ -1,6 +1,6 @@
 import { createContext, useEffect, useRef } from "react";
 import { createStore, useStore } from "zustand";
-import { devtools } from "zustand/middleware";
+import { createJSONStorage, devtools, persist } from "zustand/middleware";
 
 type Theme = "dark" | "light" | "system";
 
@@ -16,13 +16,21 @@ export interface ThemeStoreState {
 
 function createThemeStore(defaultTheme: Theme, storageKey: string) {
   return createStore<ThemeStoreState>()(
-    devtools((set) => ({
-      theme: (localStorage.getItem(storageKey) as Theme | null) ?? defaultTheme,
-      setTheme: (theme: Theme) => {
-        localStorage.setItem(storageKey, theme);
-        set({ theme });
-      },
-    })),
+    devtools(
+      persist(
+        (set) => ({
+          theme: defaultTheme,
+          setTheme: (theme: Theme) => {
+            set({ theme });
+          },
+        }),
+        {
+          name: storageKey,
+          partialize: (state) => ({ theme: state.theme }),
+          storage: createJSONStorage(() => localStorage),
+        },
+      ),
+    ),
   );
 }
 
