@@ -27,7 +27,14 @@ function createThemeStore(defaultTheme: Theme, storageKey: string) {
         {
           name: storageKey,
           partialize: (state) => ({ theme: state.theme }),
-          storage: createJSONStorage(() => localStorage),
+          storage: createJSONStorage(() => localStorage, {
+            replacer: (_, value) => {
+              return (value as { state: { theme: Theme } }).state.theme;
+            },
+            reviver: (_, value) => {
+              return { state: { theme: value as Theme } };
+            },
+          }),
         },
       ),
     ),
