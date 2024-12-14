@@ -8,7 +8,7 @@ const config = defineConfig({
     react(),
     tsconfigPaths(),
     TanStackRouterVite({
-      generatedRouteTree: "./src/lib/route-tree.ts",
+      generatedRouteTree: "./src/routes/-route-tree.ts",
       quoteStyle: "double",
       semicolons: true,
     }),

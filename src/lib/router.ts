@@ -1,7 +1,8 @@
 import { createRouter } from "@tanstack/react-router";
 
+import { routeTree } from "@/routes/-route-tree";
+
 import { queryClient } from "./query-client";
-import { routeTree } from "./route-tree";
 
 const router = createRouter({
   routeTree,
