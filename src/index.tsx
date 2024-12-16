@@ -5,7 +5,7 @@ import { RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import { queryClient, router } from "./lib";
+import { queryClient, router } from "./configs";
 import { ThemeProvider } from "./providers";
 
 const rootElement = document.getElementById("root");
