@@ -50,7 +50,7 @@ export function ThemeProvider({
   defaultTheme = "system",
   storageKey = "ui-theme",
 }: ThemeProviderProps) {
-  const themeStoreRef = useRef<ReturnType<typeof createThemeStore>>();
+  const themeStoreRef = useRef<ReturnType<typeof createThemeStore>>(null);
   if (!themeStoreRef.current) {
     themeStoreRef.current = createThemeStore(defaultTheme, storageKey);
   }
