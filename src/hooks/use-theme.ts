@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useStore } from "zustand";
 
-import { ThemeStoreContext, type ThemeStoreState } from "@/providers";
+import { ThemeStoreContext, type ThemeStoreState } from "@/lib/theme";
 
 export function useTheme<T>(selector: (state: ThemeStoreState) => T): T {
   const themeStore = useContext(ThemeStoreContext);
