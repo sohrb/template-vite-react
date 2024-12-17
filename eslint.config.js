@@ -4,6 +4,7 @@ import prettier from "eslint-config-prettier";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import ts from "typescript-eslint";
 
@@ -45,6 +46,7 @@ const config = ts.config(
     extends: [
       ...tanstackQuery.configs["flat/recommended"],
       jsxA11y.flatConfigs.recommended,
+      reactRefresh.configs.vite,
     ],
     plugins: {
       react,
